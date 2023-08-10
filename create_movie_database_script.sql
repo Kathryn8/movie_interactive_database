@@ -4,6 +4,7 @@ CREATE USER IF NOT EXISTS 'kathryn'@'localhost' IDENTIFIED BY 'kathryn_pwd';
 GRANT ALL ON my_movie_db.* TO 'kathryn'@'localhost';
 GRANT SELECT ON performance_schema.* TO 'kathryn'@'localhost';
 
+USE my_movie_db;
 -- create the database schema
 CREATE TABLE IF NOT EXISTS Genres (
 id INT,
@@ -25,7 +26,7 @@ lastName VARCHAR(256),
 PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS Movies (
+CREATE TABLE IF NOT EXISTS Movies(
 id INT,
 movieTitle VARCHAR(256),
 moviePlot VARCHAR(256),
@@ -34,9 +35,9 @@ actorID INT,
 genreID INT,
 releaseYear INT,
 rating FLOAT,
-movieLength INT.
-PRIMARY KEY (id),
-FOREIGN KEY (directorID) REFERENCES Directors(id),
-FOREIGN KEY (actorID) REFERENCES Actors(id)
-FOREIGN KEY (genreID) REFERENCES Genres(id)
+movieLength INT,
+PRIMARY KEY(id),
+FOREIGN KEY(directorID) REFERENCES Directors(id),
+FOREIGN KEY(actorID) REFERENCES Actors(id),
+FOREIGN KEY(genreID) REFERENCES Genres(id)
 );

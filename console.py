@@ -5,26 +5,22 @@ import cmd
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
 from models import storage
-from models.user import User
-from models.state import State
-from models.city import City
-from models.amenity import Amenity
-from models.place import Place
-from models.review import Review
+from models.movies import Movie
+from models.genres import Genre
+from models.directors import Director
+from models.actors import Actor
 
 
 class HBNBCommand(cmd.Cmd):
     """Contains the entry point of the command interpreter"""
     class_name_dict = {
         "BaseModel": BaseModel,
-        "User": User,
-        "State": State,
-        "City": City,
-        "Amenity": Amenity,
-        "Place": Place,
-        "Review": Review
+        "Movie": Movie,
+        "Genre": Genre,
+        "Director": Director,
+        "Actor": Actor,
     }
-    prompt = "(hbnb)"
+    prompt = "Iiiiiiiit's SHOWTIME! ----->"
 
     def do_quit(self, args):
         """Quit command to exit the program
